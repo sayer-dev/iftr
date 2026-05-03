@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FIELD TECHNICAL REPORT - IFTR Validation</title>
+
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+<form id="iftrForm">
+  <div class="page">
+    <div class="top-title">FIELD TECHNICAL REPORT</div>
+    <div class="confidential">Confidential - for internal use only</div>
+    <div class="report-type">First Report</div>
+
+    <table>
+      <tr>
+        <td class="label">Subject</td>
+        <td colspan="7"><textarea id="subject" class="short-textarea" placeholder="Example: TJA250-PRADO 250-ABNORMAL SQUEAKING HIGH PITCH FREQUENCY NOISE WHILE DRIVING FROM THE TRANSFER ASSY"></textarea></td>
+      </tr>
+      <tr>
+        <td class="label">Company</td>
+        <td colspan="3"><input id="company" value="MOHAMED NASER AL-SAYER & SONS EST."></td>
+        <td class="label">FTR No.</td>
+        <td colspan="3"><input id="ftrNo" placeholder="KUW/092/2026"></td>
+      </tr>
+      <tr>
+        <td class="label">Country, Region</td>
+        <td><input id="country" value="Kuwait"></td>
+        <td class="label">Create by</td>
+        <td><input id="createdBy"></td>
+        <td class="label">Creation Date</td>
+        <td><input type="date" id="creationDate"></td>
+        <td class="label">Issue Date</td>
+        <td><input type="date" id="issueDate"></td>
+      </tr>
+      <tr>
+        <td class="label">VIN</td>
+        <td colspan="3"><input id="vin" placeholder="JTEAACAJ7RK008751"></td>
+        <td class="label">Model-FrameNo</td>
+        <td colspan="3"><input id="frameNo" placeholder="TJA250 - K008751"></td>
+      </tr>
+      <tr>
+        <td class="label">Model</td>
+        <td colspan="3"><input id="model" placeholder="LAND CRUISER PRADO[TMC]-TJA250"></td>
+        <td class="label">Model Code</td>
+        <td colspan="3"><input id="modelCode" placeholder="TJA250L-GNZAZV"></td>
+      </tr>
+      <tr>
+        <td class="label">Engine Type</td>
+        <td><input id="engineType" placeholder="T24AFTS"></td>
+        <td class="label">Engine No.</td>
+        <td><input id="engineNo" placeholder="5A40420"></td>
+        <td class="label">T/M Type</td>
+        <td><input id="transmissionType" placeholder="AAL80F"></td>
+        <td class="label">Model Year</td>
+        <td><input type="number" id="modelYear" placeholder="2024"></td>
+      </tr>
+      <tr>
+        <td class="label">Production Date</td>
+        <td><input type="date" id="productionDate"></td>
+        <td class="label">Production Plant</td>
+        <td><input id="productionPlant" placeholder="11 TMC"></td>
+        <td class="label">Delivery Date</td>
+        <td><input type="date" id="deliveryDate"></td>
+        <td class="label">First Complaint Date</td>
+        <td><input type="date" id="firstComplaintDate"></td>
+      </tr>
+      <tr>
+        <td class="label">Repair Date</td>
+        <td><input type="date" id="repairDate"></td>
+        <td class="label">Not repaired</td>
+        <td><input type="checkbox" id="notRepaired"></td>
+        <td class="label">Mileage</td>
+        <td><input type="number" id="mileage" placeholder="38544"></td>
+        <td colspan="2">
+          <label class="checkbox-item"><input type="checkbox" id="kmUnit"> Km</label>
+          <label class="checkbox-item"><input type="checkbox" id="mileUnit"> Mile</label>
+        </td>
+      </tr>
+      <tr>
+        <td class="label">Market Impact Rank</td>
+        <td><select id="marketRank"><option value="">Select</option><option>Low</option><option>Medium</option><option>High</option></select></td>
+        <td class="label">Technical Rank</td>
+        <td><select id="technicalRank"><option value="">Select</option><option>A</option><option>B</option><option>C</option></select></td>
+        <td class="label">Reason of decision</td>
+        <td colspan="3"><textarea id="reasonDecision" class="short-textarea"></textarea></td>
+      </tr>
+      <tr><td class="section-title" colspan="8">Complaint situation</td></tr>
+      <tr>
+        <td colspan="8"><div class="checkbox-line">
+          <label class="checkbox-item"><input type="checkbox"> Buyback</label>
+          <label class="checkbox-item"><input type="checkbox"> 1 case</label>
+          <label class="checkbox-item"><input type="checkbox"> Over 1 case</label>
+          <label class="checkbox-item"><input type="checkbox"> Requested</label>
+          <label class="checkbox-item"><input type="checkbox"> Complaints out of warranty</label>
+          <label class="checkbox-item"><input type="checkbox"> After-countermeasure failure</label>
+          <label class="checkbox-item"><input type="checkbox"> From TRIGGER Alarm</label>
+        </div></td>
+      </tr>
+      <tr><td class="section-title" colspan="8">Involvement of Third Party</td></tr>
+      <tr>
+        <td colspan="8"><div class="checkbox-line">
+          <label class="checkbox-item"><input type="checkbox"> Government</label>
+          <label class="checkbox-item"><input type="checkbox"> Government official</label>
+          <label class="checkbox-item"><input type="checkbox"> Consumer protection</label>
+          <label class="checkbox-item"><input type="checkbox"> Police</label>
+          <label class="checkbox-item"><input type="checkbox"> Fire department</label>
+          <label class="checkbox-item"><input type="checkbox"> Court</label>
+          <label class="checkbox-item"><input type="checkbox"> Media</label>
+          <label class="checkbox-item"><input type="checkbox"> Others</label>
+        </div></td>
+      </tr>
+      <tr><td class="section-title" colspan="8">Type of Customer</td></tr>
+      <tr>
+        <td colspan="8"><div class="checkbox-line">
+          <label class="checkbox-item"><input type="checkbox"> Private customer</label>
+          <label class="checkbox-item"><input type="checkbox"> Fleet</label>
+          <label class="checkbox-item"><input type="checkbox"> Others</label>
+          <input id="customerOtherType" class="inline-input" placeholder="Specify other customer type">
+        </div></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="page">
+    <table>
+      <tr><td class="section-title" colspan="8">[Replaced Parts List]</td></tr>
+      <tr>
+        <td class="label">Original Failed Parts</td>
+        <td colspan="3"><input id="failedParts" placeholder="36100-35A30 TRANSFER ASSY"></td>
+        <td class="label">Component Code</td>
+        <td colspan="3"><input id="componentCode" placeholder="B06 B06: TRANSFER"></td>
+      </tr>
+      <tr>
+        <td class="label">Number of Cases</td>
+        <td><input type="number" id="caseCount"></td>
+        <td class="label">Acc. Total</td>
+        <td><input type="number" id="accTotal"></td>
+        <td class="label">Recovered Parts</td>
+        <td colspan="3"><div class="checkbox-line">
+          <label class="checkbox-item"><input type="checkbox"> Shipped to Courier Company</label>
+          <label class="checkbox-item"><input type="checkbox"> To be shipped</label>
+          <label class="checkbox-item"><input type="checkbox"> Not recovered</label>
+        </div></td>
+      </tr>
+      <tr>
+        <td class="label">Tracking No.</td>
+        <td colspan="3"><input id="trackingNo"></td>
+        <td class="label">Courier Company</td>
+        <td colspan="3"><input id="courierCompany" placeholder="Courier company name"></td>
+      </tr>
+      <tr>
+        <td class="label">Shipped To</td>
+        <td colspan="7"><input id="shippedTo" placeholder="Destination / receiver details"></td>
+      </tr>
+      <tr><td class="section-title" colspan="8">[Amend Information]</td></tr>
+      <tr>
+        <td class="label">Comments on Amendment</td>
+        <td colspan="7"><textarea id="amendComments" class="short-textarea"></textarea></td>
+      </tr>
+      <tr><td class="section-title" colspan="8">[Follow-Up FTR Information]</td></tr>
+      <tr><th>No</th><th>Regist Date</th><th>FTR No.</th><th colspan="3">Subject</th><th colspan="2">Created by</th></tr>
+      <tr><td><input></td><td><input type="date"></td><td><input></td><td colspan="3"><input></td><td colspan="2"><input></td></tr>
+      <tr><td class="section-title" colspan="8">Customer's Voice (Request, Complaint, Order, etc.)</td></tr>
+      <tr>
+        <td class="label">1. Phenomenon and Background of how this phenomenon was noticed</td>
+        <td colspan="7"><textarea id="customerComplaint" class="long-textarea" placeholder="Customer noticed abnormal noise while driving..."></textarea></td>
+      </tr>
+      <tr>
+        <td class="label">2. Detailed condition<br>2-1. Occurring condition<br><span class="mini-note">Speed, Shift, E/G rpm, Warning lamps, Frequency of occurrence etc.</span></td>
+        <td colspan="7"><table>
+          <tr><td class="label">Speed</td><td><input id="speedCondition" placeholder="20-100 km/h"></td><td class="label">Shift</td><td><input id="shiftCondition" placeholder="Any (D & R)"></td></tr>
+          <tr><td class="label">E/G rpm</td><td><input type="number" id="rpmCondition" placeholder="1500"></td><td class="label">Warning lamps</td><td><input id="warningLamps" placeholder="Nil"></td></tr>
+          <tr><td class="label">FOC</td><td colspan="3"><textarea id="frequency" class="short-textarea" placeholder="Always after engine warmed up or vehicle in hot condition"></textarea></td></tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td class="label">2-2. External condition<br><span class="mini-note">Time, Weather, Road condition, Altitude etc.</span></td>
+        <td colspan="7"><table>
+          <tr>
+            <td class="label">Time</td><td><input id="externalTime" placeholder="Morning / Afternoon / Irrelevant"></td>
+            <td class="label">Weather</td><td><input id="externalWeather" placeholder="Clear / Rainy / Hot"></td>
+          </tr>
+          <tr>
+            <td class="label">Road Condition</td>
+            <td colspan="3">
+              <input id="roadCondition" placeholder="Paved road, rough road, city road">
+              <div class="checkbox-line" style="margin-top: 5px;">
+                <label class="checkbox-item"><input type="checkbox" id="inclinedRoad"> Inclined road</label>
+                <label class="checkbox-item"><input type="checkbox" id="flatRoad"> Flat road</label>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="label">Altitude</td><td><input id="altitude" placeholder="Sea level / Normal / High altitude"></td>
+            <td class="label">Season</td><td><input id="season" placeholder="Summer / Winter / Rainy season"></td>
+          </tr>
+          <tr>
+            <td class="label">Place / Location</td><td colspan="3"><input id="placeLocation" placeholder="Highway, parking area, city road, workshop road"></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td class="label">2-3. Usage condition<br><span class="mini-note">Purpose of use, operating hours, frequency of use etc.</span></td>
+        <td colspan="7"><textarea id="usageCondition" class="short-textarea"></textarea></td>
+      </tr>
+      <tr>
+        <td class="label">Occupants</td>
+        <td colspan="7">
+          <div class="checkbox-line">
+            <strong>Front:</strong> <input id="frontOccupants" class="inline-input" style="width:80px;" placeholder="1">
+            <strong>Rear:</strong> <input id="rearOccupants" class="inline-input" style="width:80px;" placeholder="2">
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="label">Towing Condition</td>
+        <td colspan="7">
+          <div class="checkbox-line">
+            <label class="checkbox-item"><input type="radio" name="towing" value="Yes"> Yes</label>
+            <label class="checkbox-item"><input type="radio" name="towing" value="No"> No</label>
+            <input id="towingDetails" class="inline-input" placeholder="If yes, mention towing load/details">
+          </div>
+          <input type="hidden" id="towingCondition">
+        </td>
+      </tr>
+      <tr>
+        <td class="label">Driving / Operation Details</td>
+        <td colspan="7"><table>
+          <tr>
+            <td class="label">Steering Operation</td><td>
+              <div class="checkbox-line">
+                <label class="checkbox-item"><input type="checkbox"> Straight</label>
+                <label class="checkbox-item"><input type="checkbox"> Left</label>
+                <label class="checkbox-item"><input type="checkbox"> Right</label>
+                <label class="checkbox-item"><input type="checkbox"> Full lock</label>
+              </div>
+            </td>
+            <td class="label">Pedal Operation</td><td>
+              <div class="checkbox-line">
+                <label class="checkbox-item"><input type="checkbox"> Accelerator</label>
+                <label class="checkbox-item"><input type="checkbox"> Brake</label>
+                <label class="checkbox-item"><input type="checkbox"> No pedal input</label>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="label">Shift Operation</td><td>
+              <div class="checkbox-line">
+                <label class="checkbox-item"><input type="checkbox"> P to D</label>
+                <label class="checkbox-item"><input type="checkbox"> D to R</label>
+                <label class="checkbox-item"><input type="checkbox"> Upshift</label>
+                <label class="checkbox-item"><input type="checkbox"> Downshift</label>
+                <label class="checkbox-item"><input type="checkbox"> No shift operation</label>
+              </div>
+            </td>
+            <td class="label">Electrical Load</td><td>
+              <div class="checkbox-line">
+                <label class="checkbox-item"><input type="checkbox"> A/C</label>
+                <label class="checkbox-item"><input type="checkbox"> Headlight</label>
+                <label class="checkbox-item"><input type="checkbox"> Others</label>
+                <input id="electricalOther" class="inline-input" placeholder="Specify others">
+              </div>
+            </td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td class="label">3. Risk factors<br><span class="mini-note">Social media, authorities, etc.</span></td>
+        <td colspan="7"><textarea id="riskFactors" class="short-textarea" placeholder="NA"></textarea></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="page">
+    <table>
+      <tr><td class="section-title" colspan="8">DLR/DIST Confirmation Results (Symptom/Phenomenon/Diagnosis Results)</td></tr>
+      <tr>
+        <td class="label">1. How to reproduce the phenomenon & Result</td>
+        <td colspan="7">
+          <div class="checkbox-line">
+            <label class="checkbox-item"><input type="radio" name="repro" value="Reproducible"> Reproducible</label>
+            <label class="checkbox-item"><input type="radio" name="repro" value="Non-Reproducible"> Non-Reproducible</label>
+          </div>
+          <textarea id="reproduce" class="long-textarea" placeholder="Concern easy to reproduce... explain exact reproduction method and result."></textarea>
+          <input type="hidden" id="reproductionResult">
+        </td>
+      </tr>
+      <tr>
+        <td class="label">2. Occurring condition when reproducing it<br><span class="mini-note">Speed, Shift, E/G rpm etc.</span></td>
+        <td colspan="7"><textarea id="reproduceCondition" class="short-textarea"></textarea></td>
+      </tr>
+      <tr>
+        <td class="label">3. Detailed diagnosis contents & Result</td>
+        <td colspan="7"><textarea id="diagnosis" class="extra-long-textarea" placeholder="Mention road tests, inspection, tools used, removed parts, observations, measurements, sequence of steps, and final findings."></textarea></td>
+      </tr>
+      <tr>
+        <td class="label">4. Repair history / Maintenance record</td>
+        <td colspan="7"><textarea id="repairHistory" class="short-textarea" placeholder="Vehicle well maintained by service centers..."></textarea></td>
+      </tr>
+      <tr>
+        <td class="label">Attachment to support DLR/DIST confirmation</td>
+        <td colspan="7"><textarea id="confirmationAttachments" class="short-textarea" placeholder="Attachment section will be improved later."></textarea></td>
+      </tr>
+      <tr><td class="section-title" colspan="8">Probable Cause estimated by DLR/DIST</td></tr>
+      <tr>
+        <td class="label">Continuation / Estimation Details</td>
+        <td colspan="7"><textarea id="probableCause" class="extra-long-textarea" placeholder="Explain the suspected cause with reasoning and observations."></textarea></td>
+      </tr>
+      <tr>
+        <td class="label">Correction</td>
+        <td colspan="7"><div class="checkbox-line">
+          <label class="checkbox-item"><input type="checkbox"> Vehicle repaired after replacing the affected part</label>
+          <label class="checkbox-item"><input type="checkbox"> Difficult to repair</label>
+          <label class="checkbox-item"><input type="checkbox"> Problem reoccurred after repair</label>
+          <label class="checkbox-item"><input type="checkbox"> Repairable</label>
+        </div><textarea id="correction" class="short-textarea" placeholder="Explain correction / repair action"></textarea></td>
+      </tr>
+      <tr>
+        <td class="label">Repair Result</td>
+        <td colspan="7"><textarea id="repairResult" class="short-textarea" placeholder="We replaced the affected part and issue resolved..."></textarea></td>
+      </tr>
+      <tr><td class="label">Hyper Link</td><td colspan="7"><input id="hyperlink" placeholder="Optional link"></td></tr>
+    </table>
+  </div>
+
+  <div class="page">
+    <table>
+      <tr><td class="section-title" colspan="8">Requests / Comments from Customer/DLR/DIST</td></tr>
+      <tr><td class="label">1. Reason of decision on Market impact increasing</td><td colspan="7"><textarea id="marketImpactReason" class="short-textarea" placeholder="NA due to first case"></textarea></td></tr>
+      <tr><td class="label">2. Request/Comment</td><td colspan="7"><textarea id="requestComment" class="long-textarea" placeholder="We request TMC to investigate on this case and inform us..."></textarea></td></tr>
+      <tr><td class="label">Potential high number of cases</td><td colspan="7"><div class="checkbox-line"><label class="checkbox-item"><input type="checkbox"> Potential high number of cases</label><label class="checkbox-item"><input type="checkbox"> Others</label></div></td></tr>
+      <tr><td class="section-title" colspan="8">Warranty / Problem Trend in your market</td></tr>
+      <tr><td class="label">Warranty / Problem Trend</td><td colspan="7"><textarea id="warrantyTrend" class="short-textarea"></textarea></td></tr>
+      <tr><td class="section-title" colspan="8">Other Affected Vehicles</td></tr>
+      <tr><th>No</th><th>VIN / Frame No.</th><th>Model</th><th>Model Code</th><th>Engine No.</th><th>M/Y</th><th>Mileage</th><th>Remarks</th></tr>
+      <tr><td><input id="affectedNo" placeholder="1"></td><td><input id="affectedVin"></td><td><input id="affectedModel"></td><td><input id="affectedModelCode"></td><td><input id="affectedEngineNo"></td><td><input id="affectedYear"></td><td><input id="affectedMileage"></td><td><input id="affectedRemarks"></td></tr>
+      <tr><td class="section-title" colspan="8">Replaced Parts List</td></tr>
+      <tr><th>No</th><th colspan="2">Part No.</th><th colspan="3">Part Name</th><th>Q'ty</th><th>OFP</th></tr>
+      <tr><td><input placeholder="1"></td><td colspan="2"><input id="partNo" placeholder="36100-35A30"></td><td colspan="3"><input id="partName" placeholder="TRANSFER ASSY"></td><td><input type="number" id="partQty" placeholder="1"></td><td><input id="ofp" placeholder="[*]"></td></tr>
+      <tr><td class="section-title" colspan="8">Information Public Area</td></tr>
+      <tr><td class="label">Approver</td><td colspan="7"><table>
+        <tr><td class="label">APPROVER 1</td><td><input id="approver1" placeholder="Enter approver name"></td></tr>
+        <tr><td class="label">APPROVER 2</td><td><input id="approver2" placeholder="Enter approver name"></td></tr>
+        <tr><td class="label">APPROVER 3</td><td><input id="approver3" placeholder="Enter approver name"></td></tr>
+        <tr><td class="label">APPROVER 4</td><td><input id="approver4" placeholder="Enter approver name"></td></tr>
+      </table></td></tr>
+    </table>
+  </div>
+
+  <div class="button-wrap"><button type="submit">Validate IFTR</button></div>
+</form>
+
+<div id="resultBox" class="result-box"><div class="status" id="statusText"></div><div id="feedbackText"></div></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
