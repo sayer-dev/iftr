@@ -1,5 +1,5 @@
 const CURRENT_YEAR = 2026;
-
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxkjcNuRDa1zlB0X37yj6G1Q8iyy_97MVTLmLMPp9uGkS0oP-7SNBjv1rl76Pxk5DHRig/exec";
 const fillerWords = [
   "the","of","and","if","as","is","was","are","be","been","to","in","on","for",
   "with","by","from","this","that","it","or","an","a","so","but","then","than",
@@ -529,4 +529,67 @@ window.addEventListener("afterprint", () => {
   document.querySelectorAll("textarea").forEach(textarea => autoResizeTextarea(textarea));
 });
 
+async function uploadAttachment(fileInputId, outputDivId) {
+  const fileInput = document.getElementById(fileInputId);
+  const outputDiv = document.getElementById(outputDivId);
+  const attachmentBox = document.getElementById("confirmationAttachments");
+
+  if (!fileInput || !outputDiv || !attachmentBox) return;
+
+  const file = fileInput.files[0];
+
+  if (!file) {
+    outputDiv.innerHTML = "Please select a file first.";
+    return;
+  }
+
+  if (file.size > 5 * 1024 * 1024) {
+    outputDiv.innerHTML = "File size exceeds 5 MB. Please upload a smaller file.";
+    return;
+  }
+
+  outputDiv.innerHTML = "Uploading...";
+
+  const reader = new FileReader();
+
+  reader.onload = async function () {
+    const base64Data = reader.result.split(",")[1];
+
+    const payload = {
+      fileName: file.name,
+      mimeType: file.type,
+      fileData: base64Data
+    };
+
+    try {
+      const response = await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        body: JSON.stringify(payload)
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        const linkText = `${result.name}: ${result.url}`;
+
+        outputDiv.innerHTML = `
+          Uploaded: <a href="${result.url}" target="_blank">${result.name}</a>
+        `;
+
+        attachmentBox.value += attachmentBox.value
+          ? "\n" + linkText
+          : linkText;
+
+        attachmentBox.dispatchEvent(new Event("input"));
+      } else {
+        outputDiv.innerHTML = "Upload failed: " + result.message;
+      }
+    } catch (error) {
+      outputDiv.innerHTML = "Upload failed. Check Apps Script deployment/access.";
+      console.error(error);
+    }
+  };
+
+  reader.readAsDataURL(file);
+}
 setupSingleSelectionCheckboxes();
