@@ -304,7 +304,16 @@
       </tr>
       <tr>
         <td class="label">Attachment to support DLR/DIST confirmation</td>
-        <td colspan="7"><textarea id="confirmationAttachments" class="short-textarea" placeholder="Attachment section will be improved later."></textarea></td>
+<td colspan="7">
+  <input type="file" id="confirmationFile" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.xls,.xlsx">
+  <button type="button" onclick="uploadAttachment('confirmationFile', 'confirmationUploadResult')">
+    Upload Attachment
+  </button>
+
+  <div id="confirmationUploadResult" style="margin-top:8px;"></div>
+
+  <textarea id="confirmationAttachments" class="short-textarea" placeholder="Uploaded attachment links will appear here. You may also type notes."></textarea>
+</td>
       </tr>
       <tr><td class="section-title" colspan="8">Probable Cause estimated by DLR/DIST</td></tr>
       <tr>
